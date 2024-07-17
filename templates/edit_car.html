@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Edit Car</h1>
+<form method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="car_number" class="form-label">Car Number</label>
+        <input type="text" class="form-control" id="car_number" name="car_number" value="{{ car.car_number }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Car Image</label>
+        <input type="file" class="form-control" id="image" name="image" accept="image/*">
+    </div>
+    {% if car.image %}
+    <div class="mb-3">
+        <img src="{{ url_for('static', filename='uploads/' + car.image) }}" alt="{{ car.car_number }}" style="max-width: 200px;">
+    </div>
+    {% endif %}
+    <button type="submit" class="btn btn-primary">Update Car</button>
+</form>
+{% endblock %}

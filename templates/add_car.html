@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Add New Car</h1>
+<form method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="car_number" class="form-label">Car Number</label>
+        <input type="text" class="form-control" id="car_number" name="car_number" required>
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Car Image</label>
+        <input type="file" class="form-control" id="image" name="image" accept="image/*">
+    </div>
+    <button type="submit" class="btn btn-primary">Add Car</button>
+</form>
+{% endblock %}
